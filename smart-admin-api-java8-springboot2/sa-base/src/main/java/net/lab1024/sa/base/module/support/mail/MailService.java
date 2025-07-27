@@ -33,7 +33,7 @@ import java.util.Map;
 
 /**
  *
- * 发生邮件：<br/>
+ * 发送邮件：<br/>
  * 1、支持直接发送 <br/>
  * 2、支持使用邮件模板发送
  *
@@ -47,7 +47,7 @@ import java.util.Map;
 @Component
 public class MailService {
 
-    @Autowired
+    @Resource
     private JavaMailSender javaMailSender;
 
     @Resource

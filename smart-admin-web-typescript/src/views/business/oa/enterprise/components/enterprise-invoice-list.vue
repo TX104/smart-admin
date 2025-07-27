@@ -36,7 +36,6 @@
           </a-button>
         </a-button-group>
 
-
         <a-button @click="addOrUpdate()" type="primary" class="smart-margin-left20" v-if="$privilege('oa:invoice:add')">
           <template #icon>
             <PlusOutlined />

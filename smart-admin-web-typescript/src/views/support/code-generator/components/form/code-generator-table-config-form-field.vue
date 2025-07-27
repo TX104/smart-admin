@@ -44,7 +44,7 @@
       </template>
 
       <template v-if="column.dataIndex === 'nullableFlag'">
-        <a-tag color="error" v-if="text">非空</a-tag>
+        <a-tag color="error" v-if="!text">非空</a-tag>
       </template>
 
       <template v-if="column.dataIndex === 'fieldName'">
@@ -84,10 +84,11 @@
   import DictCodeSelect from '/@/components/support/dict-code-select/index.vue';
   import { convertUpperCamel, convertLowerCamel } from '/@/utils/str-util';
   import _ from 'lodash';
+  import { useDictStore } from '/@/store/modules/system/dict.js';
 
   const dictRef = ref();
   function refreshDict() {
-    dictRef.value.queryDict();
+    useDictStore().refreshData();
   }
 
   //------------------------ 全局数据 ---------------------
@@ -176,9 +177,9 @@
         columnName: column.columnName,
         columnComment: column.columnComment,
         dataType: column.dataType,
-        nullableFlag: column.isNullable === 'NO',
-        primaryKeyFlag: column.columnKey === 'PRI',
-        autoIncreaseFlag: column.extra === 'auto_increment',
+        nullableFlag: column.nullableFlag,
+        primaryKeyFlag: column.primaryKeyFlag,
+        autoIncreaseFlag: column.autoIncreaseFlag,
         //表单
         fieldName: configField ? configField.fieldName : convertLowerCamel(column.columnName),
         label: configField ? configField.label : column.columnComment,

@@ -7,13 +7,7 @@
  * @Email:     lab1024@163.com
  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
  */
-import { AppConfig } from '/@/types/config';
-
-/**
- * 应用默认配置
- */
-
-export const appDefaultConfig: AppConfig = {
+export const appDefaultConfig = {
   // i18n 语言选择
   language: 'zh_CN',
   // 布局: side 或者 side-expand 或者 top
@@ -35,7 +29,7 @@ export const appDefaultConfig: AppConfig = {
   // 标签页
   pageTagFlag: true,
   // 标签页样式: default、 antd、chrome
-  pageTagStyle: 'default',
+  pageTagStyle: 'chrome',
   // 面包屑
   breadCrumbFlag: true,
   // 页脚

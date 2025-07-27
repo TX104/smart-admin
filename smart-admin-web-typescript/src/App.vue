@@ -48,11 +48,9 @@
   import { messages } from '/@/i18n';
   import { useAppConfigStore } from '/@/store/modules/system/app-config';
   import { useSpinStore } from '/@/store/modules/system/spin';
-  import { theme } from 'ant-design-vue';
+  import { Popover, theme } from 'ant-design-vue';
   import { themeColors } from '/@/theme/color.js';
-  import { Popover } from 'ant-design-vue';
   import SmartCopyIcon from '/@/components/framework/smart-copy-icon/index.vue';
-  import _ from 'lodash';
 
   const slots = useSlots();
   const antdLocale = computed(() => messages[useAppConfigStore().language].antdLocale);
@@ -91,6 +89,7 @@
       return text;
     }
   }
+
 </script>
 <style scoped lang="less">
   :deep(.ant-table-column-sorters) {

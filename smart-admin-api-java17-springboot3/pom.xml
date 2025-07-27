@@ -29,7 +29,6 @@
         <druid.version>1.2.23</druid.version>
         <google-linkedhashmap.version>1.4.2</google-linkedhashmap.version>
         <google-guava.version>20.0</google-guava.version>
-        <user-agent-utils.version>1.21</user-agent-utils.version>
         <reflections.version>0.9.11</reflections.version>
         <commons-io.version>2.15.0</commons-io.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
@@ -45,8 +44,6 @@
         <log4j-spring-boot.version>2.23.1</log4j-spring-boot.version>
         <hutool.version>5.8.29</hutool.version>
         <velocity-engine-core.version>2.3</velocity-engine-core.version>
-        <jjwt.version>0.9.1</jjwt.version>
-        <jwks-rsa.version>0.9.0</jwks-rsa.version>
         <velocity-tools.version>3.1</velocity-tools.version>
         <sa-token.version>1.41.0</sa-token.version>
         <ip2region.version>2.7.0</ip2region.version>
@@ -130,12 +127,6 @@
             </dependency>
 
             <dependency>
-                <groupId>eu.bitwalker</groupId>
-                <artifactId>UserAgentUtils</artifactId>
-                <version>${user-agent-utils.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
                 <version>${reflections.version}</version>
@@ -200,19 +191,6 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.auth0</groupId>
-                <artifactId>jwks-rsa</artifactId>
-                <version>${jwks-rsa.version}</version>
-            </dependency>
-
             <!--velocity begin-->
             <dependency>
                 <groupId>org.apache.velocity</groupId>
@@ -262,6 +240,10 @@
                     <exclusion>
                         <artifactId>logback-classic</artifactId>
                         <groupId>ch.qos.logback</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>bcprov-jdk15on</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
